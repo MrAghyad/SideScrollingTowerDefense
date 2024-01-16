@@ -35,6 +35,14 @@ Manages character animations using an Animator component.
 ### Dynamic Resource Spawning (```ResourcesSpawner.cs```)
 Spawns resources at random intervals within a designated area.
 
+## Clone The Project and Get Started 🔥
+Run the following commands <br/>
+```❯ git clone git@github.com:MrAghyad/SideScrollingTowerDefense.git```<br/>
+
+```❯ git checkout day-1```<br/>
+
+Or use github desktop to clone the project and switch the branch to ```day-1```
+
 ## Test The Implementation 😃
 The whole implementation can be tested in scene ```PlayerControllerScene``` 🔥🚀🎮
 
