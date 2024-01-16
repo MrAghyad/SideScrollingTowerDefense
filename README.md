@@ -4,8 +4,8 @@ The tutorial of day one revolves around a comprehensive set of scripts designed 
 
 
 ## Key Features 🌠
-### Animation Handler (AnimationHandler.cs)
-Manages character animations using an Animator component.
+### Animation Handler (```AnimationHandler.cs```)
+- Manages character animations using an Animator component.
 - Allows switching between animation states through an integer parameter.
 
 ### Camera Follow (```CameraFollow.cs```)
