@@ -508,7 +508,7 @@ MonoBehaviour:
   animationHandler: {fileID: 3046519850413677007}
   spriteTransform: {fileID: 8071413050874886640}
   _state: 0
-  speed: 2
+  speed: 0.5
   damageable: {fileID: 4531994611625445499}
 --- !u!114 &4531994611625445499
 MonoBehaviour:

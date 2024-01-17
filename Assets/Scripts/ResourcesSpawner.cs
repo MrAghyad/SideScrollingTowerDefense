@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResourcesSpawner : MonoBehaviour
 {
     
-    public GameObject[] objects; // Assign the prefab you want to spawn in the inspector
+    public GameObject[] objects; 
     public Transform spawnAreaStart;
     public Transform spawnAreaEnd;
 
@@ -18,13 +18,13 @@ public class ResourcesSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(8f, 16f)); // Wait for 8 to 16 seconds
+            yield return new WaitForSeconds(Random.Range(5f, 10f)); 
 
 
-            float randomX = Random.Range(spawnAreaStart.position.x, spawnAreaEnd.position.x); // Get a random x value between x1 and x2
-            Vector3 spawnPosition = new Vector3(randomX, spawnAreaStart.position.y, 0); // Set the spawn position
+            float randomX = Random.Range(spawnAreaStart.position.x, spawnAreaEnd.position.x); 
+            Vector3 spawnPosition = new Vector3(randomX, spawnAreaStart.position.y, 0); 
 
-            Instantiate(objects[Random.Range(0, 2)], spawnPosition, Quaternion.identity); // Spawn the object
+            Instantiate(objects[Random.Range(0, 2)], spawnPosition, Quaternion.identity);
         }
     }
 }

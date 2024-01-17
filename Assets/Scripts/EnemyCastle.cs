@@ -23,19 +23,31 @@ public class EnemyCastle : MonoBehaviour
     {
         damageable = GetComponent<Damageable>();
     }
+
+    void Start()
+    {
+        StartCoroutine(SpwanEnemies());
+    }
+
     public void DealDamage(int damagePoints)
     {
         damageable.DealDamage(damagePoints);
     }
 
-    private void Update()
+
+
+    private IEnumerator SpwanEnemies()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        while (playerCastle && playerCastle.Health > 0)
         {
+            yield return new WaitForSeconds(Random.Range(10f, 20f));
+
+
             GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
             Enemy enemy = enemyObj.GetComponentInChildren<Enemy>();
             enemy.SetDirection(spawnPoint.localScale);
             enemy.SetPlayerCastle(playerCastle);
         }
+        
     }
 }

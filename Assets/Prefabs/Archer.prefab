@@ -685,7 +685,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCastle: {fileID: 0}
-  isSpawned: 0
   raycastMask:
     serializedVersion: 2
     m_Bits: 64
@@ -693,7 +692,7 @@ MonoBehaviour:
   damageable: {fileID: 4475761998301021025}
   sightEnd: {fileID: 1171001050048118029}
   arrowSpawnPoint: {fileID: 7971681548956139694}
-  speed: 0.5
+  speed: 1
   animationHandler: {fileID: 0}
   _state: 0
 --- !u!114 &739470474512506264

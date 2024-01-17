@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PlayerCastle : MonoBehaviour
 {
     [SerializeField]
     Transform spawnPoint;
     [SerializeField]
-    GameObject archerPrefab;
+    ArmyResources[] armyResources;
 
     [SerializeField]
     EnemyCastle enemyCastle;
@@ -41,11 +42,25 @@ public class PlayerCastle : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q) && armyResources.Length > 0 && armyResources.Any(army => army.armyType == ArmyType.ARCHER))
         {
-            GameObject newArcherObj = Instantiate(archerPrefab, spawnPoint.position, Quaternion.identity);
+            CreateArmyman(ArmyType.ARCHER);
+        }
+    }
+
+    private void CreateArmyman(ArmyType armyType)
+    {
+        ArmyResources armyResource = armyResources.First(army => army.armyType == armyType);
+        if (armyResource.requiredMeat <= meatCount && armyResource.requiredWood <= woodCount)
+        {
+            GameObject prefab = armyResource.prefab;
+            GameObject newArcherObj = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
             Archer archer = newArcherObj.GetComponentInChildren<Archer>();
             archer.SetEnemyCastle(enemyCastle);
+        }
+        else
+        {
+            Debug.Log($"Cannot create {armyType.ToString()}, no enough resources");
         }
     }
 
