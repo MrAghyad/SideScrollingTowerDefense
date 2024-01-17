@@ -41,12 +41,11 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         damageable = GetComponent<Damageable>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-
         _isOnTheGround = true;
         _playerState = PlayerState.IDLE;
     }

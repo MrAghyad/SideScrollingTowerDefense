@@ -29,6 +29,13 @@ public class Damageable : MonoBehaviour
         healthBar.value = _health / maxHealth;
     }
 
+    public void Heal(int healingPoints)
+    {
+        _health = Mathf.Min((int)maxHealth, _health + healingPoints);
+
+        healthBar.value = _health / maxHealth;
+    }
+
     public void OnDestroyStart()
     {
         Destroy(healthBar);
